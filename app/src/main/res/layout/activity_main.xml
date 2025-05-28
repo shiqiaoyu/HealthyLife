@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_health_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="健康打卡" />
+
+    <Button
+        android:id="@+id/btn_drink_reminder"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="饮水提醒" />
+
+    <Button
+        android:id="@+id/btn_mood_record"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="心情记录" />
+
+    <Button
+        android:id="@+id/btn_bmi_calculator"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI计算" />
+
+    <Button
+        android:id="@+id/btn_health_tips"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="健康知识" />
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="今天你的心情如何？"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/rg_mood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton android:id="@+id/rb_happy" android:text="😊 开心" />
+        <RadioButton android:id="@+id/rb_normal" android:text="😐 一般" />
+        <RadioButton android:id="@+id/rb_sad" android:text="😢 难过" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_note"
+        android:layout_marginTop="16dp"
+        android:hint="写点备注吧"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_save_mood"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存记录" />
+
+</LinearLayout>

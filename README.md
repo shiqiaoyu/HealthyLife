@@ -22,8 +22,8 @@
 
 ##  开源库说明
 - [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)：用于图表展示
-- [Retrofit](https://square.github.io/retrofit/)：用于网络请求）
+- [Retrofit](https://square.github.io/retrofit/)：用于网络请求
 
 ## 开发记录
 - 2025-05-28 项目创建
-- ...
+- 

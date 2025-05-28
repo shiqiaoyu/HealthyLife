@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <CheckBox
-        android:id="@+id/cb_sleep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我昨晚早睡了吗？" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <CheckBox
-        android:id="@+id/cb_exercise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我今天运动了吗？" />
+        <CheckBox
+            android:id="@+id/checkbox_water"
+            android:text="今日饮水达标"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <CheckBox
-        android:id="@+id/cb_breakfast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我吃早餐了吗？" />
+        <CheckBox
+            android:id="@+id/checkbox_exercise"
+            android:text="今日保持运动"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="提交打卡" />
+        <CheckBox
+            android:id="@+id/checkbox_sleep"
+            android:text="昨晚睡眠良好"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <CheckBox
+            android:id="@+id/checkbox_screen"
+            android:text="今日少看手机"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_save_checkin"
+            android:text="保存打卡"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/btn_stats"
+            android:text="查看打卡统计"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+    </LinearLayout>
+</ScrollView>
+

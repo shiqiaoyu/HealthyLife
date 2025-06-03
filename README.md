@@ -1,4 +1,6 @@
 # HealthyLife 健康生活助手
+作者：石乔宇
+学号：42311183
 
 ## 项目简介
 一款专注于日常健康管理的 Android 应用，提供健康打卡、饮水提醒、心情记录、BMI计算与健康知识推送功能。
@@ -9,15 +11,6 @@
 3. 心情记录
 4. BMI 计算
 5. 健康知识推荐
-
-## 技术栈
-- Java
-- Android SDK
-- RecyclerView
-- AlarmManager
-- SharedPreferences
-
-##  截图展示
 
 ##  开源库说明
 

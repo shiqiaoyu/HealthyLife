@@ -19,12 +19,6 @@
         android:layout_height="wrap_content"
         android:text="健康打卡" />
 
-    <Button
-        android:id="@+id/btn_drink_reminder"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="饮水提醒" />
 
     <Button
         android:id="@+id/btn_mood_record"

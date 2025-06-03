@@ -31,9 +31,6 @@
             android:name=".MoodRecordActivity"
             android:exported="false" />
         <activity
-            android:name=".DrinkReminderActivity"
-            android:exported="false" />
-        <activity
             android:name=".HealthCheckActivity"
             android:exported="false" />
 
@@ -46,8 +43,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <receiver android:name=".DrinkReminderReceiver" />
 
     </application>
 

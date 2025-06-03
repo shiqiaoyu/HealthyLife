@@ -15,17 +15,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnHealthCheck = findViewById(R.id.btn_health_check);
-        btnDrinkReminder = findViewById(R.id.btn_drink_reminder);
         btnMoodRecord = findViewById(R.id.btn_mood_record);
         btnBMICalculator = findViewById(R.id.btn_bmi_calculator);
         btnHealthTips = findViewById(R.id.btn_health_tips);
 
         btnHealthCheck.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, HealthCheckActivity.class));
-        });
-
-        btnDrinkReminder.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, DrinkReminderActivity.class));
         });
 
         btnMoodRecord.setOnClickListener(v -> {

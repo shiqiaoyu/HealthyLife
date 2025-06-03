@@ -42,4 +42,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btn_view_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看健康小贴士"
+        android:visibility="gone"
+        android:layout_marginTop="24dp" />
+
 </LinearLayout>

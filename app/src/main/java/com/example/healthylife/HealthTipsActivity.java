@@ -1,29 +1,96 @@
 package com.example.healthylife;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.util.Random;
 
 public class HealthTipsActivity extends AppCompatActivity {
 
-    TextView tvTips;
+    private TextView tvYangsheng;
+    private TextView tvJiankang;
+
+    private static final String YANGSHENG_URL = "http://health.people.com.cn/GB/408572/index.html";
+    private static final String JIANKANG_URL = "http://health.people.com.cn/GB/408571/index.html";
+    private static final String ROOT_URL = "http://health.people.com.cn";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_tips);
 
-        tvTips = findViewById(R.id.tv_tips);
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
 
-        String tips = "1. 每天保持充足的饮水量，成年人建议每天饮水 1500~2000ml。\n\n"
-                + "2. 保证规律作息，尽量每天 23:00 前入睡，睡眠时间不少于 7 小时。\n\n"
-                + "3. 每周至少进行 3 次有氧运动，每次不少于 30 分钟。\n\n"
-                + "4. 减少高盐、高糖、高油饮食，多吃蔬果和粗粮。\n\n"
-                + "5. 保持良好心态，避免长期处于紧张压力之中。\n\n"
-                + "6. 定期体检，特别是关注血压、血糖、血脂、视力、体重等指标。\n\n"
-                + "7. 居家要勤通风，每次通风不少于 15 分钟。\n\n"
-                + "8. 每天远离电子设备一段时间，保护视力与注意力集中。";
+        tvYangsheng = findViewById(R.id.tvYangsheng);
+        tvJiankang = findViewById(R.id.tvJiankang);
 
-        tvTips.setText(tips);
+        fetchRandomArticles();
+    }
+
+    private void fetchRandomArticles() {
+        new Thread(() -> {
+            try {
+                // 从“养生保健”栏目随机抽取一篇
+                Document docYang = Jsoup.connect(YANGSHENG_URL)
+                        .timeout(10000)
+                        .get();
+                Elements yangItems = docYang.select("div.newsItems a");
+                if (!yangItems.isEmpty()) {
+                    Element yangArticle = yangItems.get(new Random().nextInt(yangItems.size()));
+                    String yangTitle = yangArticle.text();
+                    String yangLink = ROOT_URL + yangArticle.attr("href");
+
+                    runOnUiThread(() -> {
+                        tvYangsheng.setText("【养生推荐】 " + yangTitle);
+                        tvYangsheng.setOnClickListener(v -> {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(yangLink));
+                            startActivity(intent);
+                        });
+                    });
+                } else {
+                    runOnUiThread(() -> tvYangsheng.setText("养生栏目暂无内容"));
+                }
+
+                // 从“科学健身”栏目随机抽取一篇
+                Document docJian = Jsoup.connect(JIANKANG_URL)
+                        .timeout(10000)
+                        .get();
+                Elements jianItems = docJian.select("div.newsItems a");
+                if (!jianItems.isEmpty()) {
+                    Element jianArticle = jianItems.get(new Random().nextInt(jianItems.size()));
+                    String jianTitle = jianArticle.text();
+                    String jianLink = ROOT_URL + jianArticle.attr("href");
+
+                    runOnUiThread(() -> {
+                        tvJiankang.setText("【科学健身】 " + jianTitle);
+                        tvJiankang.setOnClickListener(v -> {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(jianLink));
+                            startActivity(intent);
+                        });
+                    });
+                } else {
+                    runOnUiThread(() -> tvJiankang.setText("健身栏目暂无内容"));
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                runOnUiThread(() -> {
+                    Toast.makeText(HealthTipsActivity.this, "加载健康小贴士失败，请检查网络", Toast.LENGTH_LONG).show();
+                    tvYangsheng.setText("加载失败");
+                    tvJiankang.setText("加载失败");
+                });
+            }
+        }).start();
     }
 }

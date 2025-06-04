@@ -12,6 +12,13 @@
 4. 健康知识推荐
 
 ##  开源库说明
+本项目部分功能基于以下开源组件开发：
+1. jsoup(https://jsoup.org/) 
+ - 功能：用于健康知识模块的HTML网页解析
+ - 使用版本：1.20.1
+2. Material CalendarView(https://github.com/prolificinteractive/material-calendarview) 
+ - 功能：使用Material Design 日历控件实现健康打卡模块中的日历选择功能
+ - 使用版本：1.4.3
 
 ## 开发记录
 - 2025-05-28  项目创建，并完成基本功能

@@ -34,7 +34,6 @@ public class HealthCheckActivity extends AppCompatActivity {
         prefs = getSharedPreferences("HealthCheckPrefs", MODE_PRIVATE);
         todayStr = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
-        // 加载已打卡状态
         checkboxWater.setChecked(prefs.getBoolean(todayStr + "_water", false));
         checkboxExercise.setChecked(prefs.getBoolean(todayStr + "_exercise", false));
         checkboxSleep.setChecked(prefs.getBoolean(todayStr + "_sleep", false));

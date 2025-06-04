@@ -42,5 +42,4 @@
         android:layout_height="wrap_content"
         android:text="查看记录"/>
 
-
 </LinearLayout>

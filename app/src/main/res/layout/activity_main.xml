@@ -19,7 +19,6 @@
         android:layout_height="wrap_content"
         android:text="健康打卡" />
 
-
     <Button
         android:id="@+id/btn_mood_record"
         android:layout_marginTop="20dp"

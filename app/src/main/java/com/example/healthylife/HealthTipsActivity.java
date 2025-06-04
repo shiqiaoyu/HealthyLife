@@ -41,7 +41,7 @@ public class HealthTipsActivity extends AppCompatActivity {
     private void fetchRandomArticles() {
         new Thread(() -> {
             try {
-                // 从“养生保健”栏目随机抽取一篇
+                // 从养生栏目随机抽取一篇
                 Document docYang = Jsoup.connect(YANGSHENG_URL)
                         .timeout(10000)
                         .get();
@@ -62,7 +62,7 @@ public class HealthTipsActivity extends AppCompatActivity {
                     runOnUiThread(() -> tvYangsheng.setText("养生栏目暂无内容"));
                 }
 
-                // 从“科学健身”栏目随机抽取一篇
+                // 从健身栏目随机抽取一篇
                 Document docJian = Jsoup.connect(JIANKANG_URL)
                         .timeout(10000)
                         .get();

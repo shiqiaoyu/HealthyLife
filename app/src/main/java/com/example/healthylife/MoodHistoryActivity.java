@@ -38,4 +38,3 @@ public class MoodHistoryActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 }
-
